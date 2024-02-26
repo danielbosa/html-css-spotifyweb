@@ -1,0 +1,329 @@
+/* GENERAL */
+
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul{
+    list-style: none;
+}
+
+img{
+    width: 100%;
+    display: block;
+}
+
+body{
+    font-family: "Montserrat", sans-serif;
+    scroll-behavior: smooth;
+    color: var(--color-title);
+}
+
+:root {
+	--color-bg-nav: #000000;
+	--color-bg-content: #141922;
+	--color-toolbar: #282828;
+	--color-title: #f7f7f7;
+}
+
+/* header */
+.header{
+    background-color: rgba(0,0, 0,0.5);
+    /* opacity: 0.4; */
+    width: calc(100% - 200px);
+    height: 60px;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 200px;
+}
+
+.btn{
+    padding: 6px 12px;
+    border: 1px solid white;
+    border-radius: 30px;
+    font-size: 0.7rem;
+}
+
+.btn:hover{
+    cursor: pointer;
+    scale: 1.2;
+}
+
+/* wrapper */
+.wrapper{
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* content */
+.content{
+    height: calc(100vh - 90px);
+    width: 100%;
+    background-color: var(--color-bg-content);
+}
+
+/* sidebar */
+#sidebar{
+    width: 200px;
+    height: 100%;
+    background-color: black;
+    margin: 0;
+}
+
+.sidebar-top{
+    height: calc(100% - 80px);
+    width: 100%;
+}
+
+.logo{
+    padding: 5px 10px 20px 10px;
+}
+
+.logo-small{
+    display: none;
+    padding: 5px;
+}
+
+.sidebar-top .nav img{
+    height: 27px;
+    display: inline-block;
+    width: auto;
+    vertical-align: bottom;
+}
+
+.sidebar-top ul li{
+    opacity: 0.8;
+    color: white;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-top ul li:hover{
+    opacity: 1;
+    border-left: 3px solid greenyellow;
+}
+
+.sidebar-top ul li{
+    padding: 0 5px 5px 10px;
+}
+
+.sidebar-bottom{
+    height: 80px;
+    width: 100%;
+}
+
+/* navbar */
+.navbar li a{
+    text-decoration: none;
+    color: var(--color-title);
+    display: block;
+    padding: 10px;
+}
+
+.navbar{
+    font-size: 0.7rem;
+    font-weight: bold;
+    max-width: 700px;
+    margin: auto;
+}
+
+.navbar ul li{
+    opacity: 0.5;
+}
+
+.navbar ul li:hover{
+    opacity: 1;
+}
+
+.navbar ul li a:after{
+    content:'';
+    position: absolute;
+    background-color: transparent;
+    transition: 0.5s ease;
+    transform: translateX(-50%); 
+    width: 0;
+    height: 3px;
+    bottom: 8px;
+    left: 50%;
+}
+
+.navbar ul li a:hover::after{
+    content:'';
+    position: absolute;
+    background-color: greenyellow;
+    width: 50%;
+    height: 3px;
+    bottom: 8px;
+    left: 50%;
+}
+
+
+/* main */
+main{
+    width: calc(100% - 200px);
+    background-color: var(--color-bg-content);
+    overflow-y: auto;
+    padding: 80px 20px 20px 20px;
+}
+
+.cover{
+    width: calc(100% / 6);
+    padding: 20px 10px;
+}
+
+.cover .img{
+    opacity: 1.0;
+}
+
+.cover:hover .song-cover img{
+    opacity: 0.5;
+}
+
+.song-cover::after{
+    font-family: "Font Awesome 6 Free";
+    content:'\f144';
+    position: absolute;
+    font-size: 3rem;
+    color: transparent;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cover:hover .song-cover::after{
+    color: white;
+    /* transition: 0.8s ease; */
+    animation: pulse-animation 2s infinite;
+}
+  
+@keyframes pulse-animation {
+    0% {
+      box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+    }
+    100% {
+      box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+    }
+}
+
+.title, .subtitle, .description{
+    padding: 0 10px;
+}
+
+.title{
+    font-size: 1.2rem;
+}
+
+.description{
+    font-size: 0.6rem;
+    color: lightslategray;
+}
+
+.song-title{
+    font-weight: bold;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.song-author{
+    color: lightslategray;
+    font-weight: bold;
+    font-size: 0.7rem;
+    text-align: center;
+}
+
+/* toolbar */
+.toolbar{
+    height: 90px;
+    background-color: var(--color-toolbar);
+}
+
+/* utility flex */
+
+.d-flex{
+    display: flex;
+}
+
+.f-column{
+    display: flex;
+    flex-direction: column;
+}
+
+.wrap{
+    flex-wrap: wrap;
+}
+
+.j-start{
+    justify-content: flex-start;
+}
+
+.j-end{
+    justify-content: flex-end;
+}
+
+.a-center{
+    justify-content: center;
+    align-items: center;
+}
+
+.item-a-center{
+    align-items: center;
+}
+
+.sp-between{
+    justify-content: space-between;
+}
+
+.gap-10{
+    gap: 10px;
+}
+
+/* position */
+
+.p-rel{
+    position: relative;
+}
+
+.p-abs{
+    position: absolute;
+}
+
+/* utility padding */
+.pd-t-5{
+    padding-top: 5px;
+}
+
+.pd-t-10{
+    padding-top: 10px;
+}
+
+/* utility margin */
+.mg-b-20{
+    margin-bottom: 20px;
+}
+
+.mg-r-30{
+    margin-right: 30px;
+}
+
+/* utility color */
+.txt-title{
+    color: var(--color-title);
+}
+
+/* utility text */
+.txt-uppercase{
+    text-transform: uppercase;
+}
+
+.txt-bold{
+    font-weight: bold;
+}
+
+/* a decoration */
+
+a{
+    text-decoration: none;
+    color: white;
+}
