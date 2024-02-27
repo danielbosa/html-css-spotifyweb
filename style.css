@@ -28,10 +28,6 @@ body{
 	--color-title: #f7f7f7;
 }
 
-.debug{
-    border: 2px solid red;
-}
-
 /* header */
 .header{
     background-color: rgba(0,0, 0,0.5);
