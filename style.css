@@ -368,6 +368,8 @@ main{
 .toolbar{
     height: 90px;
     background-color: var(--color-toolbar);
+    position: relative;
+    z-index: 2000;
 }
 
 .toolbar .left,
