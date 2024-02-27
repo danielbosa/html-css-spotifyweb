@@ -1,7 +1,7 @@
 /* GENERAL */
 
 *{
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
@@ -209,14 +209,20 @@ body{
     width: 20px;
     display: inline-block;
     vertical-align: middle;
-    opacity: 0.5;
 }
 
 .sidebar-bottom-container .download span{
     padding-left: 5px;
     font-size: 0.6rem;
     font-weight: 600;
+}
+
+.sidebar-bottom-container .download{
     opacity: 0.5;
+}
+
+.sidebar-bottom-container .download:hover{
+    opacity: 1;
 }
 
 .sidebar-bottom .profile img{
@@ -354,10 +360,43 @@ main{
     text-align: center;
 }
 
+/***********/
 /* toolbar */
 .toolbar{
     height: 90px;
     background-color: var(--color-toolbar);
+}
+
+.toolbar .left,
+.toolbar .right{
+    width: 20%;
+}
+
+.toolbar .left img{
+    width: 50px;
+    padding-left: 5px;
+}
+
+.toolbar h6{
+    font-size: 0.7rem;
+    opacity: 0.5;
+}
+
+.toolbar h6:hover{
+    opacity: 1;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.toolbar .fa-heart,
+.toolbar .fa-folder{
+    opacity: 0.5;
+}
+
+.toolbar .fa-heart:hover,
+.toolbar .fa-folder:hover{
+    opacity: 1;
+    cursor: pointer;
 }
 
 /* utility flex */
@@ -379,12 +418,16 @@ main{
     justify-content: flex-start;
 }
 
+.j-center{
+    justify-content: center;
+    align-items: center;
+}
+
 .j-end{
     justify-content: flex-end;
 }
 
 .a-center{
-    justify-content: center;
     align-items: center;
 }
 
@@ -394,6 +437,10 @@ main{
 
 .sp-between{
     justify-content: space-between;
+}
+
+.gap-5{
+    gap: 5px;
 }
 
 .gap-10{
