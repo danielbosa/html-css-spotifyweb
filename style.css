@@ -399,6 +399,133 @@ main{
     cursor: pointer;
 }
 
+/******************/
+/* toolbar center */
+
+.toolbar .center{
+    flex-grow: 0.5;
+}
+
+.player-buttons{
+    max-width: 200px;
+    height: 60%;
+    margin: 0 auto;
+}
+
+.player-buttons .fa-circle-play{
+    font-size: 2rem;
+}
+
+.player-buttons .fa-circle-play:hover{
+    scale: 1.1;
+}
+
+.toolbar .progress-bar{
+    font-size: 0.6rem;
+}
+
+.progress-bar-time{
+    width: 90%;
+}
+
+.progress-bar-volume{
+    width: 90%;
+}
+
+/* progress bar */
+/* annullo tutte le impostazioni di default dei browser */
+
+input[type="range"]{
+    -webkit-appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* definisco la track */
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background: #053a5f;
+    height: 8px;
+    border-radius: 5px;
+}
+
+input[type="range"]::-moz-range-track {
+    background: #053a5f;
+    height: 8px;
+    border-radius: 5px;
+}
+
+/* definisco il thumb */
+/***** Thumb Styles *****/
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    margin-top: -4px;
+    background-color: #5cd5eb;
+    height: 14px;
+    width: 14px;    
+}
+
+input[type="range"]::-moz-range-thumb{
+    border: none;
+    border-radius: 0;
+    background-color: #5cd5eb;
+    height: 14px;
+    width: 14px; 
+}
+
+
+/* .toolbar input[type="range"]:hover{
+    accent-color: coral; 
+    cursor: pointer;
+}
+
+.toolbar input[type="range"]::-webkit-slider-thumb,
+.toolbar input[type="range"]::-moz-range-thumb,
+.toolbar input[type="range"]::-ms-thumb{
+    background-color: red;
+} */
+
+
+/*
+input[type="range"] {
+    -webkit-appearance: none;
+    /* margin-right: 15px; */
+    /* width: 200px; 
+    height: 7px;
+    background: rgba(255, 255, 255, 0.521);
+    border-radius: 5px;
+    background-image: rgba(255, 255, 255, 0.521);
+    background-size: 50% 100%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+  
+input[type="range"]:hover {
+    -webkit-appearance: none;
+    /* margin-right: 15px; */
+    /* width: 200px; 
+    height: 7px;
+    background: rgba(255, 255, 255, 0.521);
+    border-radius: 5px;
+    background-image: linear-gradient(#ff0000, #ff0000);
+    background-size: 50% 100%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background: lightslategray;
+*/
+
+    /* box-shadow: 0 0 2px 0 #555; */
+    /* transition: background .3s ease-in-out; */
+
 /* utility flex */
 
 .d-flex{
@@ -445,6 +572,10 @@ main{
 
 .gap-10{
     gap: 10px;
+}
+
+.gap-20{
+    gap: 20px;
 }
 
 /* position */
