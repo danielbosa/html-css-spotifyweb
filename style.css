@@ -597,6 +597,37 @@ a{
 }
 
 
+/***********************/
+/* ||||||||||||||||||| */
+/* SCROLLBAR STYLE */
+
+/* Works on Firefox */
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-progress-fill) var(--color-progress-background);
+  }
+  
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: var(--color-progress-background);
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--color-progress-fill);
+    border-radius: 20px;
+    border: 3px solid var(--color-progress-background);
+  }
+
+/* *{
+    scrollbar-color: var(--color-progress-fill) var(--color-progress-background);
+    scrollbar-width: 
+} */
+
 /*************/
 /*||||||||||*/
 /* MEDIA QUERY */
