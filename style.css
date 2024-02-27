@@ -672,10 +672,8 @@ a{
     }
 
     .navbar{
-        font-size: 0.7rem;
-        font-weight: bold;
         max-width: 400px;
-        margin: auto;
+        margin-bottom: 20px;
     }
     
     .navbar ul{
