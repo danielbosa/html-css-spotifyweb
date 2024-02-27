@@ -26,6 +26,8 @@ body{
 	--color-bg-content: #141922;
 	--color-toolbar: #282828;
 	--color-title: #f7f7f7;
+    --color-progress-background: #5a5a5a;
+	--color-progress-fill: #c1c1c1;
 }
 
 /* header */
@@ -421,123 +423,73 @@ main{
     scale: 1.1;
 }
 
-.toolbar .progress-bar{
-    font-size: 0.6rem;
+/* tentativo progress bar con div */
+
+.progress-background{
+    background-color: var(--color-progress-background);
+    height: 3px;
+    width: 80%;
 }
 
-.progress-bar-time{
-    width: 90%;
+.progress-fill{
+    background-color: var(--color-progress-fill);
+    height: 3px;
+    width: 30%;
 }
 
-.progress-bar-volume{
-    width: 90%;
-}
-
-/* progress bar */
-/* annullo tutte le impostazioni di default dei browser */
-
-input[type="range"]{
-    -webkit-appearance: none;
-    appearance: none;
-    background: transparent;
-    cursor: pointer;
-    width: 100%;
-}
-
-/* definisco la track */
-
-input[type="range"]::-webkit-slider-runnable-track {
-    background: #053a5f;
-    height: 8px;
-    border-radius: 5px;
-}
-
-input[type="range"]::-moz-range-track {
-    background: #053a5f;
-    height: 8px;
-    border-radius: 5px;
-}
-
-/* definisco il thumb */
-/***** Thumb Styles *****/
-/***** Chrome, Safari, Opera, and Edge Chromium *****/
-input[type="range"]::-webkit-slider-thumb {
-    appearance: none;
-    margin-top: -4px;
-    background-color: transparent;
-    height: 14px;
-    width: 14px; 
-    border-radius: 50%; 
-}
-
-input[type="range"]::-webkit-slider-runnable-track:hover 
-input[type="range"]::-webkit-slider-thumb{
-    appearance: none;
-    margin-top: -4px;
-    background-color: red;
-    height: 14px;
-    width: 14px; 
-    border-radius: 50%; 
-}
-
-input[type="range"]::-moz-range-thumb{
-    border: none;
-    border-radius: 0;
-    background-color: #5cd5eb;
-    height: 14px;
-    width: 14px; 
-}
-
-
-/* .toolbar input[type="range"]:hover{
-    accent-color: coral; 
+.progress-background:hover .progress-fill{
+    background-color: greenyellow;
     cursor: pointer;
 }
 
-.toolbar input[type="range"]::-webkit-slider-thumb,
-.toolbar input[type="range"]::-moz-range-thumb,
-.toolbar input[type="range"]::-ms-thumb{
-    background-color: red;
-} */
-
-
-/*
-input[type="range"] {
-    -webkit-appearance: none;
-    /* margin-right: 15px; */
-    /* width: 200px; 
-    height: 7px;
-    background: rgba(255, 255, 255, 0.521);
-    border-radius: 5px;
-    background-image: rgba(255, 255, 255, 0.521);
-    background-size: 50% 100%;
-    background-repeat: no-repeat;
-    cursor: pointer;
-}
-  
-input[type="range"]:hover {
-    -webkit-appearance: none;
-    /* margin-right: 15px; */
-    /* width: 200px; 
-    height: 7px;
-    background: rgba(255, 255, 255, 0.521);
-    border-radius: 5px;
-    background-image: linear-gradient(#ff0000, #ff0000);
-    background-size: 50% 100%;
-    background-repeat: no-repeat;
-    cursor: pointer;
-}
-
-input[type="range"]::-webkit-slider-thumb{
-    -webkit-appearance: none;
-    height: 15px;
-    width: 15px;
+.progress-thumb{
+    background-color: white;
+    height: 10px;
+    aspect-ratio: 1 / 1;
     border-radius: 50%;
-    background: lightslategray;
-*/
+    position: relative;
+    bottom: 12px;
+    left: 30%; 
+    display: none;
+}
 
-    /* box-shadow: 0 0 2px 0 #555; */
-    /* transition: background .3s ease-in-out; */
+.progress-background:hover .progress-thumb{
+    display: inline-block;
+    cursor: pointer;
+}
+
+.volume-background{
+    background-color: var(--color-progress-background);
+    height: 3px;
+    width: 80px;
+}
+
+.volume-fill{
+    background-color: var(--color-progress-fill);
+    height: 3px;
+    width: 30%;
+}
+
+.volume-background:hover .volume-fill{
+    background-color: greenyellow;
+    cursor: pointer;
+}
+
+.volume-thumb{
+    background-color: white;
+    height: 10px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    position: relative;
+    bottom: 12px;
+    left: 30%; 
+    display: none;
+}
+
+.volume-background:hover .volume-thumb{
+    display: inline-block;
+    cursor: pointer;
+}
 
 /* utility flex */
 
@@ -682,6 +634,10 @@ a{
         gap: 5px;
     }
 
+    .volume-background{
+        width: 50px;
+    }
+
 }
 
 @media screen and (max-width: 576px){
@@ -726,8 +682,16 @@ a{
         left: 45px;
     }
 
-    /* .toolbar .right .icons{
+    .toolbar .right .icons{
         flex-direction: column;
         gap: 5px;
-    } */
+    }
+
+    .toolbar .progress-bar-volume{
+        transform: rotate(90deg);
+        width: 60%;
+        display: hidden;
+    }
+
+
 }
